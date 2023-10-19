@@ -20,10 +20,7 @@ function App() {
       inputDate = date;
     }
     
-    console.log(inputDate);
-    console.log(curr_date);
     const diffTime = Math.abs(curr_date- inputDate);
-    console.log(diffTime/(1000*60*60*24*365.25));
     const diffYears = Math.floor(diffTime/(1000*60*60*24*365.25));    
     updateAge(diffYears);
   }
