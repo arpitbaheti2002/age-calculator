@@ -15,13 +15,16 @@ function App() {
     if(typeof(date) === "string")
     {
       var splitDate = date.split("-");
-      inputDate = new Date(splitDate[0], splitDate[1], splitDate[2]);
+      inputDate = new Date(splitDate[0], splitDate[1]-1, splitDate[2]);
     } else {
       inputDate = date;
     }
     
+    console.log(inputDate);
+    console.log(curr_date);
     const diffTime = Math.abs(curr_date- inputDate);
-    const diffYears = Math.floor(diffTime/(1000*60*60*24*365));    
+    console.log(diffTime/(1000*60*60*24*365.25));
+    const diffYears = Math.floor(diffTime/(1000*60*60*24*365.25));    
     updateAge(diffYears);
   }
 
